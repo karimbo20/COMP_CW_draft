@@ -16,7 +16,6 @@ import obstacles.vehicles;
 
 /**
  * This class is in charge of initializing all obstacles attached to the root node
- * @author karim
  *
  */
 public class obstacleFactory{
