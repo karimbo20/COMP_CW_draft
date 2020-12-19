@@ -1,0 +1,12 @@
+player1
+1000
+1
+player2
+160
+0
+player3
+150
+0
+kk
+290
+1
