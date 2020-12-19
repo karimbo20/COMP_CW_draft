@@ -99,15 +99,13 @@ public class SceneProducer {
 
 
 		Button button1=new Button("PLAY");
-
 		button1.setFont(new Font("Comic Sans MS", 20));
 		button1.setOnAction(e -> primaryStage.setScene(creategamescene()));
 		button1.setMinSize(100, 50);
 		button1.setStyle("-fx-text-fill: #000000;-fx-background-color:Green");
-
-
-		Button button2=new Button("Exit");
-		button2.setOnAction(e -> primaryStage.close());
+		
+		Button button2=new Button("Scoreboard");
+		button2.setOnAction(e -> primaryStage.setScene(createtable()));
 		button2.setMinSize(100, 50);
 		button2.setFont(new Font("Comic Sans MS", 20));
 		button2.setStyle("-fx-text-fill: #000000;-fx-background-color:Green");
@@ -118,8 +116,10 @@ public class SceneProducer {
 		button3.setFont(new Font("Comic Sans MS", 20));
 		button3.setStyle("-fx-text-fill: #000000;-fx-background-color:Green");
 
-		Button button4=new Button("Scoreboard");
-		button4.setOnAction(e -> primaryStage.setScene(createtable()));
+		
+		
+		Button button4=new Button("Exit");
+		button4.setOnAction(e -> primaryStage.close());
 		button4.setMinSize(100, 50);
 		button4.setFont(new Font("Comic Sans MS", 20));
 		button4.setStyle("-fx-text-fill: #000000;-fx-background-color:Green");
@@ -128,7 +128,7 @@ public class SceneProducer {
 		VBox layout1=new VBox();         
 		layout1.setSpacing(50);
 		layout1.setAlignment(Pos.CENTER);
-		layout1.getChildren().addAll(iv1,label1,label2,button1,button3,button4,button2);
+		layout1.getChildren().addAll(iv1,label1,label2,button1,button2,button3,button4);
 		layout1.setStyle("-fx-background-color: #000000;");
 		layout1.setBackground(new Background(new BackgroundFill(Color.rgb(0,255,0), CornerRadii.EMPTY, Insets.EMPTY)));
 		Scene menuscene=new Scene(layout1,xres,yres);
@@ -299,34 +299,37 @@ public class SceneProducer {
 		background.removeall();
 
 		Label label1=new Label("LEVEL "+background.lvl+"!");
-		label1.setFont(new Font("Arial", 24));
+		label1.setFont(new Font("Comic Sans MS", 20));
 
 		Label label2=new Label("Score: "+ScH.getPoints());
-		label1.setFont(new Font("Arial", 24));
+		label1.setFont(new Font("Comic Sans MS", 20));
 
-		Button button4=new Button("next level");
-		button4.setOnAction(e -> primaryStage.setScene(creategamescene()));
-		button4.setMinSize(100, 50);
-		button4.setStyle("-fx-text-fill: #00ff00;-fx-background-color:Green");
+		Button button1=new Button("Next Level");
+		button1.setFont(new Font("Comic Sans MS", 20));
+		button1.setOnAction(e -> primaryStage.setScene(creategamescene()));
+		button1.setMinSize(100, 50);
+		button1.setStyle("-fx-text-fill: #00ff00;-fx-background-color:Green");
 
-		Button button=new Button("Scoreboard");
-		button.setOnAction(e -> primaryStage.setScene(createtable()));
-		button.setMinSize(100, 50);
-		button.setStyle("-fx-text-fill: #00ff00;-fx-background-color:Green");
-
-		Button button2=new Button("Exit :(");
-		button2.setOnAction(e -> primaryStage.close());
+		Button button2=new Button("Scoreboard");
+		button2.setFont(new Font("Comic Sans MS", 20));
+		button2.setOnAction(e -> primaryStage.setScene(createtable()));
 		button2.setMinSize(100, 50);
 		button2.setStyle("-fx-text-fill: #00ff00;-fx-background-color:Green");
+
+		Button button3=new Button("Exit");
+		button3.setFont(new Font("Comic Sans MS", 20));
+		button3.setOnAction(e -> primaryStage.close());
+		button3.setMinSize(100, 50);
+		button3.setStyle("-fx-text-fill: #00ff00;-fx-background-color:Green");
 
 		TextField textField = new TextField();
 		textField.setMaxSize(150, 50);
 
-		Button button3 = new Button("Submit Name");
-		button3.setMinSize(100, 50);
-		button3.setStyle("-fx-text-fill: #00ff00;-fx-background-color:Green");
-
-		button3.setOnAction(action -> {
+		Button button4 = new Button("Submit Name");
+		button4.setFont(new Font("Comic Sans MS", 20));
+		button4.setMinSize(100, 50);
+		button4.setStyle("-fx-text-fill: #00ff00;-fx-background-color:Green");
+		button4.setOnAction(action -> {
 			ScH.writescores(textField.getText(),ScH.getPoints(),background.lvl);
 		}
 				)
@@ -335,7 +338,7 @@ public class SceneProducer {
 		VBox layout1=new VBox();         
 		layout1.setSpacing(50);
 		layout1.setAlignment(Pos.CENTER);// Changed the alignment to center-left
-		layout1.getChildren().addAll(label1,label2,textField,button3,button,button4,button2);
+		layout1.getChildren().addAll(label1,label2,textField,button1,button2,button3,button4);
 		layout1.setBackground(new Background(new BackgroundFill(Color.rgb(0,255,0), CornerRadii.EMPTY, Insets.EMPTY)));
 		Scene nxtlvlscene=new Scene(layout1,xres,yres);
 		back=nxtlvlscene;
